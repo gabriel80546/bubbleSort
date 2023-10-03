@@ -29,11 +29,12 @@ int main() {
     }
 
     for(i = 0; i < QTS_NUMEROS; i++) {
-        triangulacao = meusNumeros[i];
-        if(meusNumeros[j] <= meusNumeros[i]) {
-            triangulacao = meusNumeros[j];
+        for(j = 0; j < QTS_NUMEROS; j++) {
+            if(ordenado[i] < ordenado[j]) {
+                triangulacao = ordenado[j];
+            }
+            ordenado[i] = triangulacao;
         }
-        ordenado[i] = triangulacao;
     }
 
     mostrarNumeros(meusNumeros, QTS_NUMEROS);

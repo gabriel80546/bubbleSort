@@ -31,9 +31,10 @@ int main() {
     for(i = 0; i < QTS_NUMEROS; i++) {
         for(j = 0; j < QTS_NUMEROS; j++) {
             if(ordenado[i] < ordenado[j]) {
-                triangulacao = ordenado[j];
+                triangulacao = ordenado[i];
+                ordenado[i] = ordenado[j];
+                ordenado[j] = triangulacao;
             }
-            ordenado[i] = triangulacao;
         }
     }
 
